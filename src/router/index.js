@@ -1,6 +1,6 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Home from "./../components/Home.vue";
-import About from "./../components/Malediven.vue";
+import Malediven from "./../components/Malediven.vue";
 
 const routes = [
   {
@@ -11,7 +11,7 @@ const routes = [
   {
     path: "/malediven",
     name: "Malediven",
-    component: About,
+    component: Malediven,
   },
 ];
 

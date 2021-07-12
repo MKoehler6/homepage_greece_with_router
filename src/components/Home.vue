@@ -4,9 +4,8 @@
       <div class="menu-item menu-text">
         Griechenland
       </div>
-      <div class="menu-item menu-text">
-        <a class="menu-item menu-text" href="Malediven">Malediven</a>
-        
+      <div class="menu-item menu-text" onclick="window.location='Malediven';">
+        Malediven
       </div>
       <div class="menu-item menu-text">
         Madeira
@@ -39,13 +38,41 @@
       </div>
     </div>
   </div>
+  <div class="imageshow">
+    <!--
+    <div>
+      <img class="singleImage" :src="require(`../images/1.jpg`)">
+    </div>
+    <div>
+      <img class="singleImage" :src="require(`../images/1.jpg`)">
+    </div>
+    <div>
+      <img class="singleImage" :src="require(`../images/1.jpg`)">
+    </div>
+    -->
+    <div v-for="(item, i) in 8" :key="item" onclick="window.location='eins';">
+      <img class="singleImage" :src="require(`../images/${i+1}.jpg`)">
+    </div>
+  </div>
 </template>
 
 <script>
+
+
 export default {
+  data() {
+    return {
+      imagearray: ['../images/1.jpg',
+                   '../assets/E3.png'],
+      index: '../images/1.jpg'
+    }
+  },
   name: 'Home',
   props: {
     msg: String
+  },
+  components: {
+
   }
 }
 </script>
@@ -65,13 +92,16 @@ li {
 }
 a {
   text-decoration: none;
+  text-decoration-color: none;
 }
+
 .name {
   display: flex;
   align-items: center;
   justify-content: center;
   vertical-align: middle;
   margin-top: 100px;
+  margin-bottom: 100px;
 }
 .letter {
   margin: 10px;
@@ -100,5 +130,11 @@ a {
   /*font-size: 36px;*/
   color: white;
   padding: 8px;
+}
+.imageshow {
+  display:flex;
+}
+.singleImage {
+  width: 90%;
 }
 </style>
